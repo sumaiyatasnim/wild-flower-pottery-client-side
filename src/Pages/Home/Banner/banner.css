@@ -1,0 +1,25 @@
+.banner {
+    height: 75vh;
+    width: 100%;
+    background-image: url("../../../Pottery/illus-2.png"),
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+  }
+  .title {
+    color: white;
+    font-size: 48px;
+    font-weight: 900;
+    position: sticky;
+    text-align: center;
+  }
+  .title-two {
+    font-weight: 500;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+  }
