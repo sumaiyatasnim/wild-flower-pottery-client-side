@@ -10,6 +10,9 @@ import Register from './Pages/LoginRegister/Register/Register';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import AddProducts from './Pages/Dashboard/AddProduct/AddProducts';
+import Purchase from './Pages/Purchase/Purchase';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 
 function App() {
   return (
@@ -20,8 +23,11 @@ function App() {
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/home' element={<Home></Home>}></Route>
             <Route path='/products' element={<Products></Products>}></Route>
+            <Route path='/addProducts' element={<AddProducts></AddProducts>}></Route>
             <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}></Route>
             {/* <Route path='/about' element={}></Route> */}
+            <Route path='/orderPlace/:productId' element={<Purchase></Purchase>}></Route>
+            <Route path='/myOrder' element={<MyOrder></MyOrder>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
           </Routes>

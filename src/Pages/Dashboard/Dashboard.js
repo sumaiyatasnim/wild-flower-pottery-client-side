@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 210;
 
@@ -31,14 +32,16 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
                             {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                         </ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
-                ))}
+                ))} */}
+                <Link to="/addProducts"><ListItem button >Add Products</ListItem></Link>
+                <Link to="/myOrder"><ListItem button >My Order</ListItem></Link>
             </List>
         </div>
     );
