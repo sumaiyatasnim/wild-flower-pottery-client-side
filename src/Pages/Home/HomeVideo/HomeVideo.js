@@ -3,6 +3,7 @@ import potteryVideo from '../../../Pottery/pottery-video.mp4'
 const HomeVideo = () => {
     return (
         <div className='container'>
+            <hr className='d-flex justify-content-center ' />
             <div className="container-fluid video-sec my-5 mt-5">
                 <div className="row row-cols-2">
                     <div className="col">

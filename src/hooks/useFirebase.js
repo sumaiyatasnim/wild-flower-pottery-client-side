@@ -15,10 +15,13 @@ const useFireBase = () => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // const destination = location?.state?.from || '/';
-                // navigate(destination);
-                const newUser = { email, displayName: name }
+                setAuthError('');
+
+                const newUser = { email, displayName: name };
                 setUser(newUser);
+                //save user to database
+                saveUser(email, name, 'POST');
+
                 //send name to firebase
                 updateProfile(auth.currentUser, {
                     displayName: name,
@@ -28,18 +31,14 @@ const useFireBase = () => {
 
                 });
 
-
-                setAuthError('');
-
                 // navigate('/');
             })
             .catch((error) => {
-
                 setAuthError(error.message);
-
             })
             .finally(() => setIsLoading(false))
     }
+
 
     //login
     const loginUser = (email, password, location, navigate) => {
@@ -48,7 +47,6 @@ const useFireBase = () => {
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
                 navigate(destination);
-
                 setAuthError('');
             })
             .catch((error) => {
@@ -63,9 +61,11 @@ const useFireBase = () => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-
                 const user = result.user;
-                // ...
+                saveUser(user.email, user.displayName, 'PUT');
+                setAuthError('')
+                const destination = location?.state?.from || '/';
+                navigate(destination);
             }).catch((error) => {
 
                 setAuthError(error.message);
@@ -89,6 +89,20 @@ const useFireBase = () => {
             })
             .finally(() => setIsLoading(false))
     }
+    // save user to database .server e data pathabo.
+    const saveUser = (email, displayName, method) => {
+        //user nam e ekti object banalam .
+        const user = { email, displayName };
+        fetch('http://localhost:5000/addUser', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
 
     // observer (user presence state)
     useEffect(() => {

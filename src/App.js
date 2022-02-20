@@ -13,6 +13,9 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AddProducts from './Pages/Dashboard/AddProduct/AddProducts';
 import Purchase from './Pages/Purchase/Purchase';
 import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+
 
 function App() {
   return (
@@ -23,14 +26,24 @@ function App() {
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/home' element={<Home></Home>}></Route>
             <Route path='/products' element={<Products></Products>}></Route>
-            <Route path='/addProducts' element={<AddProducts></AddProducts>}></Route>
-            <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}></Route>
+
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard>
+            </Dashboard></PrivateRoute>
+            }>
+              <Route path={`/dashboard/addProducts`} element={<AddProducts></AddProducts>}></Route>
+              <Route path='/dashboard/manageProduct' element={<ManageProducts></ManageProducts>}></Route>
+              <Route path='/dashboard/makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+
+              <Route path='/dashboard/myOrder' element={<MyOrder></MyOrder>}></Route>
+
+            </Route>
+
             {/* <Route path='/about' element={}></Route> */}
-            <Route path='/orderPlace/:productId' element={<Purchase></Purchase>}></Route>
-            <Route path='/myOrder' element={<MyOrder></MyOrder>}></Route>
+            <Route path='/orderPlace/:productId' element={<PrivateRoute><Purchase></Purchase></PrivateRoute>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
           </Routes>
+
         </BrowserRouter>
       </AuthProvider>
     </>

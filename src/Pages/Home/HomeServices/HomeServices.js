@@ -12,7 +12,7 @@ const HomeServices = () => {
     return (
         <div className="container">
             <h2 className='d-flex justify-content-center my-5'>Featured Products</h2>
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 {
                     homePd.map(pd => <HomeService
                         key={pd.id}

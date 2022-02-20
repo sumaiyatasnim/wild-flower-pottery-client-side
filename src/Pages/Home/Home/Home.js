@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
@@ -15,9 +16,8 @@ const Home = () => {
                 <Category></Category>
                 <HomeVideo></HomeVideo>
                 <HomeServices></HomeServices>
+                <Footer></Footer>
             </div>
-
-
         </>
     );
 };

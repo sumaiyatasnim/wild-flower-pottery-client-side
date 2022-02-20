@@ -18,9 +18,7 @@ const Navigation = () => {
                         <Nav.Link className='text-dark fs-5' as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link className='text-dark fs-5' as={HashLink} to="/products">Pottery collections</Nav.Link>
 
-                        <Nav.Link className='text-dark fs-5' as={HashLink} to="/about">About</Nav.Link>
-
-
+                        {/* <Nav.Link className='text-dark fs-5' as={HashLink} to="/about">About</Nav.Link> */}
 
                         {user?.email ?
                             <div className='d-flex'>
