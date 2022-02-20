@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginPic from '../../../Pottery/loginPic.jpg'
+import Navigation from '../../Shared/Navigation/Navigation';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError, googleSignIn } = useAuth()
@@ -29,7 +30,7 @@ const Login = () => {
 
     return (
         <div>
-
+            <Navigation></Navigation>
             <Container>
                 <Grid container spacing={2}>
                     <Grid sx={{ mt: 8 }} item xs={12} md={6}>

@@ -10,7 +10,7 @@ const AddProducts = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/addProducts', data)
+        axios.post('https://limitless-reef-99253.herokuapp.com/addProducts', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');

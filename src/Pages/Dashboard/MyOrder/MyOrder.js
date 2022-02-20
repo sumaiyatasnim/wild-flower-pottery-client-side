@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [cancel, setCancel] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder/${user?.email}`)
+        fetch(`https://limitless-reef-99253.herokuapp.com/myOrder/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [cancel])
@@ -22,7 +22,7 @@ const MyOrder = () => {
 
         if (confirm) {
             axios
-                .delete(`http://localhost:5000/delteOrder/${id}`)
+                .delete(`https://limitless-reef-99253.herokuapp.com/delteOrder/${id}`)
                 .then((res) => {
                     if (res.data.deletedCount) {
                         alert('Deleted successfully')

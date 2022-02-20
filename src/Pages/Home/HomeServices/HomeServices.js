@@ -4,7 +4,7 @@ import HomeService from './HomeService';
 const HomeServices = () => {
     const [homeProducts, setHomeProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://limitless-reef-99253.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setHomeProducts(data));
     }, [])

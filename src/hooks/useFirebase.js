@@ -93,7 +93,7 @@ const useFireBase = () => {
     const saveUser = (email, displayName, method) => {
         //user nam e ekti object banalam .
         const user = { email, displayName };
-        fetch('http://localhost:5000/addUser', {
+        fetch('https://limitless-reef-99253.herokuapp.com/addUser', {
             method: method,
             headers: {
                 'content-type': 'application/json'

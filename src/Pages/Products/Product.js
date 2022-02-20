@@ -11,7 +11,7 @@ const Product = ({ product }) => {
                     <div style={{ height: '340px' }} className=" card-body">
                         <h6 className="text-success">{name}</h6>
                         <p>Description : {description}</p>
-                        <h5>Price: {price}</h5>
+                        <h5>Price: ${price}</h5>
                         {/* <p className="px-3">{description}</p> */}
                     </div>
                     <div className="d-flex justify-content-center pb-4">

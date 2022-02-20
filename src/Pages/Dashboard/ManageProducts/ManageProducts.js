@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     const [cancel, setCancel] = useState("");
     useEffect(() => {
-        fetch("http://localhost:5000/allProducts")
+        fetch("https://limitless-reef-99253.herokuapp.com/allProducts")
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);
@@ -18,7 +18,7 @@ const ManageProducts = () => {
         );
         if (confirm) {
             axios
-                .delete(`http://localhost:5000/allProducts/delete/${id}`)
+                .delete(`https://limitless-reef-99253.herokuapp.com/allProducts/delete/${id}`)
                 .then((res) => {
                     if (res.data.deletedCount) {
                         alert('Product has been deleted')

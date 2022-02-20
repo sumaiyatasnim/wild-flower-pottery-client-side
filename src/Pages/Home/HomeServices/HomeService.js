@@ -13,7 +13,7 @@ const HomeService = ({ pd }) => {
                         <img style={{ height: "300px" }} className="card-img-top img-fluid" src={image} alt="" />
                         <div className="card-body" style={{ height: '100px' }} >
                             <h6 className="text-success">{name}</h6>
-                            <h6>Price: {price}</h6>
+                            <h6>Price:$ {price}</h6>
                             {/* <p className="px-3">{description}</p> */}
                         </div>
                         <div className="d-flex justify-content-center pb-4">

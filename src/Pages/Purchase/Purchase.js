@@ -15,7 +15,7 @@
 //     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/allProducts/${productId}`)
+//         fetch(`https://limitless-reef-99253.herokuapp.com/allProducts/${productId}`)
 //             .then(res => res.json())
 //             .then(data => setProduct(data))
 //     }, []);
@@ -27,7 +27,7 @@
 
 
 //         console.log('my order', myOrder)
-//         fetch('http://localhost:5000/myOrders', {
+//         fetch('https://limitless-reef-99253.herokuapp.com/myOrders', {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json'
@@ -196,7 +196,7 @@ const Purchase = () => {
     const { name, price, description, image } = product;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allProducts/${productId}`)
+        fetch(`https://limitless-reef-99253.herokuapp.com/allProducts/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
@@ -224,7 +224,7 @@ const Purchase = () => {
             email: user?.email,
         };
         axios
-            .post("http://localhost:5000/myOrders", order)
+            .post("https://limitless-reef-99253.herokuapp.com/myOrders", order)
             .then((res) => {
                 if (res.data.insertedId) {
                     alert('You have booked the product')
